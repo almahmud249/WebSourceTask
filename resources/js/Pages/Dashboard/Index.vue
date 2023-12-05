@@ -56,6 +56,7 @@
                     >Download Format</a
                     >
                 </h4>
+                <span class="text-danger">{{this.$page.props.flash.error}}</span>
                 <div>
                     <form @submit.prevent=submit>
                         <div class="file_upload_input">

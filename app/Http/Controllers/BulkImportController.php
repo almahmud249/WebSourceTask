@@ -30,8 +30,9 @@ class BulkImportController extends Controller
         $data = [];
         $col_key = ['city', 'city_ascii', 'state_id', 'state_name', 'county_fips', 'county_name', 'lat', 'lng', 'population', 'density', 'source', 'military', 'incorporated', 'timezone', 'ranking', 'zips', 'id'];
         foreach ($collections as $collection) {
+
             foreach ($collection as $key => $value) {
-                if ($key != "" && $value === "" && !in_array($key, $col_key)) {
+                if ($key != "" && $value === "") {
                     return redirect()->back()->with('error', 'Please fill ' . $key . ' fields');
                 }
             }
@@ -57,7 +58,7 @@ class BulkImportController extends Controller
             ]);
         }
         DB::table('cities')->insert($data);
-        return true;
+        return redirect()->route('city.index');
     }
 
     public function cityIndex(Request $request)
@@ -70,7 +71,7 @@ class BulkImportController extends Controller
                 ->when(request('state_name') != null, function ($query) {
                     $query->where('state_name', 'like', '%' . request('state_name') . '%');
                 })
-                ->paginate(request()->get('limit') ?? 10)
+                ->paginate(10)
                 ->withQueryString()
                 ->through(fn($city) => [
                     'id' => $city->id,

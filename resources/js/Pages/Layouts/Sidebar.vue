@@ -21,6 +21,14 @@
                     </p>
                 </InertiaLink>
             </li>
+            <li>
+                <InertiaLink :href="route('city.index')" method="get">
+                    <p class="menu_link">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="aside_link">City List</span>
+                    </p>
+                </InertiaLink>
+            </li>
         </ul>
     </aside>
 </template>

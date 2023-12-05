@@ -19,3 +19,5 @@ Route::get('/', [BulkImportController::class, 'home'])->name('dashboard');
 Route::get('city', [BulkImportController::class, 'city'])->name('city');
 Route::get('admin', [BulkImportController::class, 'dashboard'])->name('dashboard');
 Route::post('city-bulk-import', [BulkImportController::class, 'bulkImport'])->name('city.bulk.import');
+Route::get('city-index', [BulkImportController::class, 'cityIndex'])->name('city.index');
+Route::get('city/details/{id}', [BulkImportController::class, 'cityDetails'])->name('city.details');
