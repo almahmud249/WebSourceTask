@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class City extends Model
 {
     use HasFactory;
+
+    protected $casts = [
+        'zips' => 'array',
+        'incorporated' => 'boolean',
+        'military' => 'boolean',
+    ];
 }

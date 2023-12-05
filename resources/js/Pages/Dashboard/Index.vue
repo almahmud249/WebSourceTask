@@ -131,7 +131,7 @@ export default {
     },
     methods: {
         submit() {
-
+            this.form.post(route('city.bulk.import', this.form))
         },
         pickFile(files) {
             this.form.file = files

@@ -18,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [BulkImportController::class, 'home'])->name('dashboard');
 Route::get('city', [BulkImportController::class, 'city'])->name('city');
 Route::get('admin', [BulkImportController::class, 'dashboard'])->name('dashboard');
+Route::post('city-bulk-import', [BulkImportController::class, 'bulkImport'])->name('city.bulk.import');

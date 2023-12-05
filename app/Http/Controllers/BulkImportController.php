@@ -6,6 +6,7 @@ use App\Models\City;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
+use Rap2hpoutre\FastExcel\FastExcel;
 
 class BulkImportController extends Controller
 {
