@@ -5,6 +5,10 @@
 
             <!-- navbar end  -->
             <div style="height: 500px" class="body_wraper p-md-5 p-3 ">
+                <InertiaLink :href="route('dashboard', {key : key})" method="get">
+                    <button type="button" class="btn btn-primary btn-lg">Admin Panel</button>
+                </InertiaLink>
+
                 <div class="login_container">
                     <img class="z-index-2 mb-5" height="40" src="https://www.smartwebsource.com/wp-content/uploads/2016/02/smartwebsource-text-logo-1.png" >
                     <div class="login_box cm_box">
